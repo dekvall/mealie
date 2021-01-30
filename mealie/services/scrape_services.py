@@ -18,6 +18,7 @@ from services.recipe_services import Recipe
 CWD = Path(__file__).parent
 TEMP_FILE = DEBUG_DIR.joinpath("last_recipe.json")
 STEP_SPLITTER = re.compile(r"(?:\d\. ?)|(?:[\n\r]+)")
+TAG_MATCHER = re.compile(r'<.*?>')
 
 
 def normalize_image_url(image) -> str:
@@ -34,18 +35,18 @@ def normalize_image_url(image) -> str:
 def normalize_instructions(instructions) -> List[dict]:
     if type(instructions) == str:
         return [
-            {"text": unescape_html(line.strip())} for line in STEP_SPLITTER.split(instructions) if line
+            {"text": clean_entry(line)} for line in STEP_SPLITTER.split(instructions) if line
         ]
 
     # Plain strings in a list
     elif type(instructions) == list and type(instructions[0]) == str:
-        return [{"text": unescape_html(step.strip())} for step in instructions]
+        return [{"text": clean_entry(step)} for step in instructions]
 
     # Dictionaries (let's assume it's a HowToStep) in a list
     elif type(instructions) == list and type(instructions[0]) == dict:
         steps = instructions[0]["itemListElement"] if instructions[0]["@type"] == "HowToSection" else instructions
         return [
-            {"text": unescape_html(step["text"].strip())}
+            {"text": clean_entry(step["text"])}
             for step in steps
             if step["@type"] == "HowToStep"
     ]
@@ -62,6 +63,10 @@ def unescape_html(l) -> str:
         pass
     return l
 
+def clean_entry(e) -> str:
+    e = e.strip()
+    e = unescape_html(e)
+    return TAG_MATCHER.sub("", e)
 
 def normalize_yield(yld) -> str:
     if type(yld) == list:
