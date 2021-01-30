@@ -6,6 +6,7 @@ import extruct
 import requests
 import scrape_schema_recipe
 import html
+import re
 from app_config import DEBUG_DIR
 from slugify import slugify
 from utils.logger import logger
@@ -16,6 +17,7 @@ from services.recipe_services import Recipe
 
 CWD = Path(__file__).parent
 TEMP_FILE = DEBUG_DIR.joinpath("last_recipe.json")
+STEP_SPLITTER = re.compile(r"(?:\d\. ?)|(?:[\n\r]+)")
 
 
 def normalize_image_url(image) -> str:
@@ -30,30 +32,31 @@ def normalize_image_url(image) -> str:
 
 
 def normalize_instructions(instructions) -> List[dict]:
-    # One long string split by (possibly multiple) new lines
     if type(instructions) == str:
         return [
-            {"text": normalize_instruction(line)} for line in instructions.splitlines() if line
+            {"text": unescape_html(line.strip())} for line in STEP_SPLITTER.split(instructions) if line
         ]
 
     # Plain strings in a list
     elif type(instructions) == list and type(instructions[0]) == str:
-        return [{"text": normalize_instruction(step)} for step in instructions]
+        return [{"text": unescape_html(step.strip())} for step in instructions]
 
     # Dictionaries (let's assume it's a HowToStep) in a list
     elif type(instructions) == list and type(instructions[0]) == dict:
+        steps = instructions[0]["itemListElement"] if instructions[0]["@type"] == "HowToSection" else instructions
         return [
-            {"text": normalize_instruction(step["text"])}
-            for step in instructions
+            {"text": unescape_html(step["text"].strip())}
+            for step in steps
             if step["@type"] == "HowToStep"
-        ]
+    ]
 
     else:
         raise Exception(f"Unrecognised instruction format: {instructions}")
 
 
-def normalize_instruction(line) -> str:
-    l = line.strip()
+def unescape_html(l) -> str:
+    if not l:
+        return None
     # Some sites erroneously escape their strings on multiple levels
     while not l == (l := html.unescape(l)):
         pass
@@ -75,6 +78,7 @@ def normalize_time(time_entry) -> str:
 
 
 def normalize_data(recipe_data: dict) -> dict:
+    recipe_data["description"] = unescape_html(recipe_data.get("description"))
     recipe_data["totalTime"] = normalize_time(recipe_data.get("totalTime"))
     recipe_data["prepTime"] = normalize_time(recipe_data.get("prepTime"))
     recipe_data["performTime"] = normalize_time(recipe_data.get("performTime"))
@@ -82,8 +86,13 @@ def normalize_data(recipe_data: dict) -> dict:
     recipe_data["recipeInstructions"] = normalize_instructions(
         recipe_data["recipeInstructions"]
     )
-    recipe_data["image"] = normalize_image_url(recipe_data["image"])
+    recipe_data["recipeIngredient"] = normalize_ingredients(recipe_data["recipeIngredient"])
+    recipe_data["image"] = normalize_image_url(recipe_data.get("image"))
     return recipe_data
+
+
+def normalize_ingredients(ingredients) -> List[str]:
+    return [unescape_html(line.strip()) for line in ingredients]
 
 
 def process_recipe_data(new_recipe: dict, url=None) -> dict:
@@ -131,7 +140,8 @@ def download_image_for_recipe(recipe: dict) -> dict:
     try:
         img_path = scrape_image(recipe.get("image"), recipe.get("slug"))
         recipe["image"] = img_path.name
-    except:
+    except Exception as e:
+        logger.error(f"{e}")
         recipe["image"] = None
 
     return recipe

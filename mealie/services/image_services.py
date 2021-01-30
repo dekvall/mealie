@@ -3,6 +3,10 @@ from pathlib import Path
 
 import requests
 from app_config import IMG_DIR
+from urllib.parse import urlparse
+from os.path import basename
+from pathlib import Path
+from utils.logger import logger
 
 
 def read_image(recipe_slug: str) -> Path:
@@ -42,20 +46,21 @@ def scrape_image(image_url: str, slug: str) -> Path:
             if key == "url":
                 image_url = image_url.get("url")
 
-    filename = slug + "." + image_url.split(".")[-1]
+    #TODO: This could use a test
+    extension = Path(urlparse(image_url).path).suffix
+    filename = slug + "." + extension
     filename = IMG_DIR.joinpath(filename)
 
     try:
         r = requests.get(image_url, stream=True)
-    except:
-        return None
+    except Exception as e:
+        logger.error(f"Failed fetching image {e}")
+        return
 
     if r.status_code == 200:
-        r.raw.decode_content = True
-
         with open(filename, "wb") as f:
             shutil.copyfileobj(r.raw, f)
 
         return filename
 
-    return None
+    return

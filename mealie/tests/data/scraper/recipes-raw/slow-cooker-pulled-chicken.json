@@ -1,0 +1,62 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Recipe",
+  "mainEntityOfPage": "https://www.purewow.com/recipes/Slow-Cooker-Pulled-Chicken",
+  "name": "Slow-Cooker Pulled Chicken",
+  "headline": "Slow-Cooker Pulled Chicken",
+  "datePublished": "2015-09-01 13:00:00.0",
+  "dateModified": "2015-09-01 13:00:00.0",
+  "description": "If we've taught you one thing recently, it's that your slow cooker can&mdash;and should&mdash;be used year-round. Now we've got just the recipe&nbsp;to help you bridge the transition from summer to fall. Our pulled chicken is&nbsp;surprisingly versatile, so&nbsp;once you get the basics down, you can...",
+  "keywords": "chicken, cooking, recipe, easy, dinner, meat, slow cooker",
+  "author": {
+    "@type": "Person",
+    "name": "Erin McDowell"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PureWow",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://d1glun6kjhlyhe.cloudfront.net/v_2013/images/pw-logo-amp.jpg",
+      "width": 184,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://d3d127vhjgkwcw.cloudfront.net/images/articles/2017_11/slow_cooker_pulled_chicken_recipe_600.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "cookTime": "PT7H",
+  "prepTime": "PT10M",
+  "totalTime": "PT7H10M",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "202 calories",
+    "carbohydrateContent": "14 grams carbohydrate",
+    "fatContent": "4 grams fat",
+    "proteinContent": "28 grams protein",
+    "sugarContent": "9 grams sugar"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "2.7",
+    "ratingCount": "1283"
+  },
+  "recipeYield": "6 servings",
+  "recipeIngredient": [
+    "1 sweet onion, halved and thinly sliced",
+    "1&frac12; pounds boneless, skinless chicken breasts",
+    "1 14-ounce can crushed tomatoes",
+    "1 tablespoon Worcestershire sauce",
+    "3 tablespoons apple cider vinegar",
+    "2 tablespoons brown sugar",
+    "3 tablespoons yellow mustard",
+    "2 teaspoons ground cumin",
+    "1 teaspoon garlic powder",
+    "1 teaspoon ground chile powder",
+    "1 teaspoon ground coriander"
+  ],
+  "recipeInstructions": "1. Place the onion and chicken in the base of a slow cooker. Add the remaining ingredients and toss gently to combine. 2. Put the lid on the slow cooker and set the heat on low. Cook for 7 hours, or until the chicken is tender and easy to shred. 3. Use two forks to shred the meat. The chicken can be served immediately or transferred toan airtight container. It can be refrigerated for up to five days or frozen for up to a month. Note: You can serve the chicken any way you'd like, but we prefer sandwiches on brioche buns, topped with shredded lettuce and sliced tomato."
+}

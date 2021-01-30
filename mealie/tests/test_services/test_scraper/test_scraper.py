@@ -39,6 +39,7 @@ url_validation_regex = re.compile(
         ("microwave_sweet_potatoes_04783.json", 4),
         ("moroccan-skirt-steak-with-roasted-pepper-couscous.json", 4),
         ("Pizza-Knoblauch-Champignon-Paprika-vegan.html.json", 3),
+        ("slow-cooker-pulled-chicken.json", 3)
     ],
 )
 def test_normalize_data(json_file, num_steps):
@@ -63,6 +64,16 @@ def test_normalize_instructions(instructions):
         {"text": "B"},
         {"text": "C"},
     ]
+
+@pytest.mark.parametrize(
+    "json_file,first_step",
+    [
+        ("kladdig-kladdkaka.json", "Sätt ugnen på 200°C.")
+    ]
+)
+def test_unescape_deep_html(json_file, first_step):
+    recipe_data = normalize_data(json.load(open(TEST_RAW_RECIPES.joinpath(json_file))))
+    assert recipe_data["recipeInstructions"][0]["text"] == first_step
 
 
 def test_html_no_recipe_data():

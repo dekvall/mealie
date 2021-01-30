@@ -1,0 +1,91 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Recipe",
+  "name": "Kladdig kladdkaka",
+  "image": "https://assets.icanet.se/q_auto,f_auto/imagevaultfiles/id_221660/cf_259/kladdig_kladdkaka.jpg",
+  "url": "https://www.ica.se/recept/kladdig-kladdkaka-722982/",
+  "description": "Kladdig kladdkaka är ju det godaste som finns. Med detta recept på kladdkaka får kakan perfekt krispig yta samtidigt som den är kladdig i mitten. Vill du ha en extra kladdig kladdkaka är det bara att justera tiden i ugnen. Servera med vispgrädde och du har fixat en riktig drömfika!",
+  "datePublished": "2017-10-24",
+  "dateModified": "2017-10-24",
+  "author": {
+    "@type": "Organization",
+    "name": "ICA Köket"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.1,
+    "reviewCount": 2721
+  },
+  "totalTime": "PT45M",
+  "cookingMethod": "I ugn",
+  "recipeCategory": "Fika",
+  "recipeCuisine": "",
+  "keywords": "kladdkaka, recept kladdig kladdkaka, kladdkaka recept kladdig, kladdig kladdkaka, extra kladdig kladdkaka, riktigt kladdig kladdkaka",
+  "recipeYield": "ca 8 bitar",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "ca 8 bitar Servings",
+    "calories": "310 calories",
+    "fatContent": "14 g",
+    "carbohydrateContent": "42 g",
+    "proteinContent": "4 g"
+  },
+  "recipeIngredient": [
+    "smör till formen",
+    "ströbröd till formen",
+    "100 g smör",
+    "2 st ägg",
+    "2 1/2 dl strösocker",
+    "3 msk kakao",
+    "2 tsk vaniljsocker",
+    "1 1/2 dl vetemjöl",
+    "1 krm salt",
+    "florsocker till garnering",
+    "2 dl vispgrädde",
+    "färska bär"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "S&amp;auml;tt ugnen p&amp;aring; 200&amp;deg;C."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sm&amp;ouml;rj och br&amp;ouml;a en form med l&amp;ouml;stagbar kant, ca 24 cm i diameter (f&amp;ouml;r 8 bitar) eller sp&amp;auml;nn fast ett bakpl&amp;aring;tspapper p&amp;aring; botten."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sm&amp;auml;lt sm&amp;ouml;ret i kastrull, l&amp;aring;t svalna n&amp;aring;got."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vispa ihop &amp;auml;gg och socker (anv&amp;auml;nd inte en elvisp)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Blanda kakao, vaniljsocker, vetemj&amp;ouml;l och salt i en bunke och r&amp;ouml;r ner i &amp;auml;ggblandningnen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tills&amp;auml;tt det sm&amp;auml;lta sm&amp;ouml;ret och blanda f&amp;ouml;rsiktigt ihop till en j&amp;auml;mn smet och h&amp;auml;ll sedan &amp;ouml;ver smeten i formen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gr&amp;auml;dda mitt i ugnen i ca 10-15 minuter (&amp;ouml;ka eller minska tiden vid behov beroende p&amp;aring; hur kladdig du vill ha den)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ta ut kladdkakan och l&amp;aring;t svalna."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sikta florsocker &amp;ouml;ver om s&amp;aring; &amp;ouml;nskas. Servera med vispad gr&amp;auml;dde och f&amp;auml;rska b&amp;auml;r."
+    }
+  ],
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": "http://schema.org/CommentAction",
+    "userInteractionCount": 99
+  },
+  "commentCount": 99
+}

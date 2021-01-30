@@ -1,0 +1,94 @@
+[
+  {
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "url": "https://www.arla.se/",
+    "logo": "https://www.arla.se/UI/img/arla-logo@2x.02d13ae2.png"
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Recept & mat",
+        "item": "https://www.arla.se/recept/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Citronkyckling med oliver",
+        "item": null
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Citronkyckling med oliver",
+    "image": "https://cdn-rdb.arla.com/Files/arla-se/1859146027/e157135d-40fb-4a8c-b65f-f30a54bb34a5.jpg?crop=(0,165,0,-75)&w=1200&h=630&scale=both&format=jpg&quality=80&ak=f525e733&hm=bc3f1c63",
+    "author": null,
+    "description": "Ljuvligt doftande citronkyckling kryddad med vitlök och rosmarin. En sagolik kycklinggryta hämtad ur medelhavsköket, toppad med citronklyftor.",
+    "totalTime": "PT30M",
+    "recipeYield": "4 port",
+    "recipeCategory": "Huvudrätt",
+    "recipeCuisine": null,
+    "nutrition": {
+      "@type": "NutritionInformation",
+      "calories": "415 kcal",
+      "carbohydrateContent": "31 g",
+      "fatContent": "16 g",
+      "fiberContent": "",
+      "proteinContent": "34 g"
+    },
+    "recipeIngredient": [
+      "500 g kycklingbröstfilé",
+      "2 vitlöksklyftor",
+      "Arla® Svenskt Smör",
+      "1 tsk salt",
+      "1 krm svartpeppar",
+      "2½ dl Kelda® matlagningsgrädde",
+      "½ tärning hönsbuljong",
+      "1 tsk torkad rosmarin",
+      "rivet skal och pressad saft av ½ citron",
+      "1 dl svarta oliver",
+      "½ kruka färsk persilja",
+      "750 g potatis"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToSection",
+        "name": null,
+        "itemListElement": [
+          {
+            "@type": "HowToStep",
+            "text": "Börja med att skala och koka potatisen i lättsaltat vatten. "
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Skär varje kycklingfilé i 3 bitar på längden. Skala och hacka vitlöken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": " Bryn kycklingen i smör i en stekpanna, salta och peppra. "
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Blanda grädde, buljongtärning, rosmarin och citronsaft i en gryta. Lägg i kyckling och vitlök. Låt koka under lock ca 5 min. "
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Rör ner citronskal, oliver och hackad persilja. Garnera med citron och servera med potatis."
+          }
+        ]
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "3.5",
+      "ratingCount": "1522"
+    },
+    "video": null
+  }
+]
